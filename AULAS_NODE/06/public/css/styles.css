@@ -2,70 +2,257 @@
   font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+
 }
- 
+
+body {
+  background-image: url(../img/pexels-mike-468229-1174138.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+  padding: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 #navbar {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid transparent;
   padding: 1em;
   margin-bottom: 1em;
+
 }
- 
+
 #navbar ul {
   display: flex;
   list-style: none;
 }
- 
+
 #navbar ul li {
   margin-left: 1em;
 }
- 
+
 h1 {
   text-align: center;
   margin-bottom: 1em;
+  color: white;
+
 }
- 
-.form {
+
+/* .form {
   width: 450px;
   margin: 0 auto;
+  border: 5px solid transparent;
+  padding: 1em;
+  border-radius: 16px;
+
+} */
+
+/* CAROUSEL */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.8);
+  border-radius: 16px;
+  padding: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
- 
+
+.carousel {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel img.personagem {
+  display: none;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: opacity 0.3s;
+}
+
+.carousel img.personagem.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel-btn {
+  background: linear-gradient(to right, #ffe600, #00ff6a);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: filter 0.2s;
+}
+
+.carousel-btn:hover {
+  filter: brightness(0.9);
+}
+/* FORMULÁRIO */
 .form-control {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5em;
 }
- 
+
 .form-control label {
   font-weight: bold;
   margin-bottom: 0.3em;
 }
- 
+
 .form-control input {
   padding: 5px;
 }
- 
+
+/* ...existing code... */
+
+/* LINKS */
+a, .link {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* FORMULÁRIO COM FUNDO TRANSPARENTE E BLUR */
+.form {
+  width: 450px;
+  margin: 0 auto;
+  border: 5px solid transparent;
+  padding: 1em;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* IMAGENS EM LINHA */
+.personagens {
+  width: 700px;
+  margin: 15px auto;
+  padding: 1em;
+  border: 5px solid transparent;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+
+}
+
+img.personagem {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.card {
+  background: rgba(60, 60, 60, 0.6);
+  border-radius: 16px;
+  padding: 2em;
+  margin: 1em auto;
+  width: 450px;
+  color: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* BOTÕES MAIORES E GRADIENTE */
+button, input[type="submit"] {
+  padding: 16px 32px;
+  font-size: 1.2em;
+  background: linear-gradient(to right, #ffe600, #00ff6a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: filter 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+  filter: brightness(0.95);
+}
+
+/* ...existing code... */
+/* button {
+  padding: 10px;
+  background-color: #00cff3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+/* .personagens {
+  width: 450px;
+  margin: 0 auto;
+  padding: 1em;
+  border: 5px solid transparent;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+} */
+
+/* .link{
+  text-decoration: none;
+  color: chartreuse;
+  font-size: xx-large;
+  font-weight: bold;
+  font-style: italic;
+} */
 /* BOOKS */
 .books-container {
   width: 450px;
   margin: 0 auto;
+
 }
- 
+
 .books-container div {
   border-bottom: 1px solid #ccc;
   padding: 5px;
   margin: 5px;
 }
- 
+
 .bold {
   font-weight: bold;
 }
- 
+
 /* BOOK */
 #book-page {
   padding: 2em;
 }
- 
+
 #book-page .container {
   text-align: center;
 }
- 
+
+.actions {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.actions a {
+  margin-right: 1em;
+}

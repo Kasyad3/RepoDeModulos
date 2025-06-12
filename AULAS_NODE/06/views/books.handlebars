@@ -1,6 +1,13 @@
-<h1>Livros disponíveis:</h1>
+{{!-- <h1>Livros disponíveis:</h1>
 <div class="books-container">
   {{#each books}}
 <div>#{{this.id}} - <span class="bold"><a href="/books/{{this.id}}">{{this.title}}</a></span> - {{this.pageqty}} páginas</div>
+  {{/each}}
+</div> --}}
+
+<h1>Livros disponíveis:</h1>
+<div class="card books-container">
+  {{#each books}}
+    <div>#{{this.id}} - <span class="bold"><a href="/books/{{this.id}}" class="link">{{this.title}}</a></span> - {{this.pageqty}} páginas</div>
   {{/each}}
 </div>
