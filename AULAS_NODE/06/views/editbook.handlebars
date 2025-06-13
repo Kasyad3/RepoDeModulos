@@ -11,16 +11,16 @@
   </div>
   <input type="submit" value="Editar">
 </form> --}}
-<h1>Edite o seu livro:</h1>
+<h1>Edite o seu registro de banana:</h1>
 <form class="form" action="/books/updatebook" method="POST">
   <input type="hidden" name="id" value="{{book.id}}">
   <div class="form-control">
-    <label for="title">Título:</label>
-    <input type="text" name="title" placeholder="Título do livro" value="{{book.title}}">
+    <label for="title">Nome:</label>
+    <input type="text" name="title" placeholder="Nome da banana" value="{{book.title}}">
   </div>
   <div class="form-control">
-    <label for="pageqty">Número de páginas:</label>
-    <input type="number" name="pageqty" placeholder="Quantas páginas o livro tem?" value="{{book.pageqty}}">
+    <label for="pageqty">Quantidade:</label>
+    <input type="number" name="pageqty" placeholder="Quantas bananas você coletou?" value="{{book.pageqty}}">
   </div>
   <input type="submit" value="Editar">
 </form>

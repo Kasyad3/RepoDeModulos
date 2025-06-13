@@ -1,54 +1,71 @@
 <body>
 
-<h1>Cadastre o seu livro:</h1>
-<form class="form" action="/books/insertbook" method="POST">
+  <h1>Banana Coletada:</h1>
+  <form class="form" action="/books/insertbook" method="POST">
     <div class="form-control">
-        <label for="title">Título:</label>
-        <input type="text" name="title" placeholder="Título do livro">
+      <label for="title">Nome:</label>
+      <input type="text" name="title" placeholder="Dê um nome para a banana">
     </div>
     <div class="form-control">
-        <label for="pageqty">Número de páginas:</label>
-        <input type="number" name="pageqty" placeholder="Quantas páginas o livro tem?">
+      <label for="pageqty">Quantidade:</label>
+      <input type="number" name="pageqty" placeholder="Quantas bananas você coletou?">
     </div>
     <input type="submit" value="Cadastrar">
-</form>
+  </form>
 
-<div class="carousel-container">
-  <button class="carousel-btn" id="prevBtn">&#8592;</button>
-  <div class="carousel">
-    <img src="/img/pngegg.png" class="personagem active" alt="" id="1">
-    <img src="/img/pngegg(1).png" class="personagem" alt="" id="2">
-    <img src="/img/pngegg(2).png" class="personagem" alt="" id="3">
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="/img/pngegg.png" class="personagem" alt="" id="1">
+      <img src="/img/pngegg(1).png" class="personagem" alt="" id="2">
+      <img src="/img/pngegg(2).png" class="personagem" alt="" id="3">
+    </div>
   </div>
-  <button class="carousel-btn" id="nextBtn">&#8594;</button>
-</div>
-    
+
+  <div class="video-card">
+
+    <img src="/img/DEj.gif" alt="">
+    <img src="/img/YQDq.gif" alt="">
+    <img src="/img/V0pW.gif" alt="">
+
+  </div>
 </body>
 
 <!-- Adicione antes do fechamento da tag </body> em main.handlebars ou diretamente em home.handlebars -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.carousel img.personagem');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+  document.addEventListener('DOMContentLoaded', function () {
+    const slide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img.personagem');
     let current = 0;
 
-    function showImage(index) {
-      images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-      });
+    function showSlide(index) {
+      slide.style.transform = `translateX(-${index * 500}px)`;
     }
 
-    prevBtn.addEventListener('click', () => {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    });
-
-    nextBtn.addEventListener('click', () => {
+    function nextSlide() {
       current = (current + 1) % images.length;
-      showImage(current);
-    });
+      showSlide(current);
+    }
 
-    showImage(current);
+    setInterval(nextSlide, 2500); // Troca a cada 2.5 segundos
+
+    showSlide(current);
   });
+</script>
+
+<script>
+  function createBanana() {
+    const banana = document.createElement('img');
+    banana.src = '/img/banana2.gif'; // Caminho da sua imagem
+    banana.className = 'banana';
+    banana.style.left = Math.random() * 100 + 'vw';
+    banana.style.animationDuration = (2 + Math.random() * 3) + 's'; // velocidade aleatória
+
+    document.body.appendChild(banana);
+
+    banana.addEventListener('animationend', () => {
+      banana.remove();
+    });
+  }
+
+  setInterval(createBanana, 400); // Ajuste a frequência da chuva aqui
 </script>

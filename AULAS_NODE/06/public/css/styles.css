@@ -36,9 +36,15 @@ img {
 h1 {
   text-align: center;
   margin-bottom: 1em;
-  color: white;
-
+  color: rgb(226, 212, 8);
+   border: 5px solid transparent;
+  padding: 1em;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
+
 
 /* .form {
   width: 450px;
@@ -51,6 +57,29 @@ h1 {
 
 /* CAROUSEL */
 .carousel-container {
+  width: 500px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+  width: 100%;
+}
+
+.carousel-slide img.personagem {
+  width: 500px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+/* .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +132,7 @@ h1 {
 
 .carousel-btn:hover {
   filter: brightness(0.9);
-}
+} */
 /* FORMULÁRIO */
 .form-control {
   display: flex;
@@ -125,7 +154,7 @@ h1 {
 /* LINKS */
 a, .link {
   text-decoration: underline;
-  color: #fff;
+  color: #d19a01;
   font-size: 1.4em;
   font-weight: bold;
 }
@@ -221,6 +250,46 @@ button:hover, input[type="submit"]:hover {
   font-weight: bold;
   font-style: italic;
 } */
+
+/* VIDEO */
+.video-card {
+  width: 650px;
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 20px;
+  background: rgba(40, 40, 40, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+}
+.video-card img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* BANANA */
+.banana {
+  position: fixed;
+  top: -100px;
+  width: 50px;
+  height: auto;
+  pointer-events: none;
+  z-index: 9999;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
 /* BOOKS */
 .books-container {
   width: 450px;
